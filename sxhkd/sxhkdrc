@@ -1,0 +1,123 @@
+################################################
+###		WINDOW MOVEMENT 	     ###
+################################################
+
+# Focus at a given node
+super + {Left,Up,Right,Down}
+	bspc node -f {west,north,east,south}
+
+# Resize a window
+super + shift + {Left,Up,Right,Down}
+	bash ~/.local/bin/resize/{shrinkx,expandy,expandx,shrinky}.sh
+
+# Move floating windows
+super + alt + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#Send to a given desktop
+super + shift + {1-6}
+	bspc node -d '^{2-5}'
+
+super + {1-6}
+  bspc desktop -f '^{2-5}'
+
+#Swap the focued window the center 
+super + @space
+	bspc node -s last
+
+#Kill Window
+super+q
+  bspc node -c
+
+################################################
+###		TILING MODES	   	     ###
+################################################
+
+super + f
+	bspc node focused.tiled -t fullscreen
+
+super + t
+	bspc node focused.fullscreen -t tiled
+
+super + shift + f
+	bspc node focused.tiled -t floating
+
+super + shift + t
+	bspc node focused.floating -t tiled
+
+
+################################################
+###		APPLICATIONS    	     ###
+################################################
+
+super + Return
+	$TERMINAL
+
+super + w
+	$BROWSER
+
+super + r
+	$FILEMGR
+
+super + {n}
+	$TERMINAL -e {nvim}
+
+super + shift + Escape
+	slock
+
+super + Escape 
+	powermenu
+
+super + d
+	rofi -terminal $TERMINAL -show drun -icon-theme "Papirus" -show-icons
+
+super+alt+@space
+  reload
+
+super + shift + e
+	rofi -show emoji
+
+@Print
+	screenshot
+
+shift + @Print
+	screenshot select
+
+control + @Print
+	screenshot window
+
+
+################################################
+###		FUNCTION KEYS	   	     ###
+################################################
+
+XF86MonBrightnessUp
+	changebrightness up
+
+XF86MonBrightnessDown
+	changebrightness down
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioRaiseVolume
+	changevolume up
+
+XF86AudioLowerVolume
+	changevolume down
+
+XF86AudioMute
+	changevolume mute
+
+# Close Notifications
+ctrl + space
+  dunstctl close
+
+
+
