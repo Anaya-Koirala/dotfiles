@@ -1,2 +1,0 @@
-#! /bin/sh
-pkill -USR1 -x sxhkd;bspc wm -r;sh ~/.config/polybar/launch.sh

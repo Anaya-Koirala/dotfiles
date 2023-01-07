@@ -56,11 +56,11 @@ super + Return
 super + w
 	$BROWSER
 
-super + r
+super + shift + r
 	$FILEMGR
 
-super + {n}
-	$TERMINAL -e {nvim}
+super + {r,n,c}
+	$TERMINAL -e {lf,nvim,bc}
 
 super + shift + Escape
 	slock
