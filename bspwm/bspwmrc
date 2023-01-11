@@ -1,9 +1,15 @@
 #! /bin/sh
 
+if [ -x $HOME/.local/bin/dual_monitor ];then
+  dual_monitor
+fi
+
+
 pgrep -x sxhkd >/dev/null || sxhkd &
 bspc monitor eDP -d 1 2 3 4 5 &
-bspc monitor DisplayPort-0 -d 1 2 3 4 5 &
-xautolock -time 5 -locker "sudo /sbin/zzz" -detectsleep
+bspc monitor DisplayPort-0 -d 6 7 8 9  &
+
+xautolock -time 5 -locker "daos /sbin/zzz" -detectsleep
 pgrep bspswallow || bspswallow &
 xwallpaper --zoom ~/.config/wall.jpg &
 $HOME/.config/polybar/launch.sh

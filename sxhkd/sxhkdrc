@@ -15,11 +15,11 @@ super + alt + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #Send to a given desktop
-super + shift + {1-6}
-	bspc node -d '^{2-5}'
+super + shift + {1-9}
+	bspc node -d {1,2,3,4,5,6,7,8,9}
 
-super + {1-6}
-  bspc desktop -f '^{2-5}'
+super + {1-9}
+  bspc desktop -f {1,2,3,4,5,6,7,8,9}
 
 #Swap the focued window the center 
 super + @space
