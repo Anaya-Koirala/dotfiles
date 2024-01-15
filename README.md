@@ -1,4 +1,4 @@
-Copied from ericmurpheyxyz
+Taken from ericmurpheyxyz but have added alot of my own things like key binds, applications and themes
 
 Some config is required like moving owners and location.
 
